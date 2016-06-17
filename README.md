@@ -1,1 +1,1 @@
-"# SoftUni-v3.0" 
+SoftUni-v3.0
