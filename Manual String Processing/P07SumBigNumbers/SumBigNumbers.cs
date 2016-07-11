@@ -43,8 +43,8 @@
 
         public static void EnsureOfStrings(ref string firstNum, ref string secondNum)
         {
-            firstNum = firstNum.TrimStart(new char[] { '0' });
-            secondNum = secondNum.TrimStart(new char[] { '0' });
+            firstNum = firstNum.TrimStart('0');
+            secondNum = secondNum.TrimStart('0');
         }
     }
 }
