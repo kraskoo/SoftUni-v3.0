@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36061C42-C422-403D-989A-DB9DEF67B432}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>P10InfernoInfinity</RootNamespace>
+    <AssemblyName>P10InfernoInfinity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\WeaponRepository.cs" />
+    <Compile Include="Enums\GemEnumerationLevel.cs" />
+    <Compile Include="Enums\GemEnumerationType.cs" />
+    <Compile Include="Enums\WeaponLevelEnumeration.cs" />
+    <Compile Include="Enums\WeaponTypeEnumeration.cs" />
+    <Compile Include="Factories\GemTypeFactory.cs" />
+    <Compile Include="Factories\GemLevelFactory.cs" />
+    <Compile Include="Factories\WeaponLevelFactory.cs" />
+    <Compile Include="Factories\WeaponTypeFactory.cs" />
+    <Compile Include="Interfaces\Factories\IGemLevelFactory.cs" />
+    <Compile Include="Interfaces\Factories\IGemTypeFactory.cs" />
+    <Compile Include="Interfaces\Factories\IWeaponLevelFactory.cs" />
+    <Compile Include="Interfaces\Factories\IWeaponTypeFactory.cs" />
+    <Compile Include="Interfaces\IAddableGem.cs" />
+    <Compile Include="Interfaces\IBonusDamageable.cs" />
+    <Compile Include="Interfaces\IDamagable.cs" />
+    <Compile Include="Interfaces\IGem.cs" />
+    <Compile Include="Interfaces\IGemLevelable.cs" />
+    <Compile Include="Interfaces\IGemSocketable.cs" />
+    <Compile Include="Interfaces\IGemTypeable.cs" />
+    <Compile Include="Interfaces\IInputReader.cs" />
+    <Compile Include="Interfaces\IMagicalStat.cs" />
+    <Compile Include="Interfaces\IOutputWriter.cs" />
+    <Compile Include="Interfaces\IRemovableGem.cs" />
+    <Compile Include="Interfaces\IRunnable.cs" />
+    <Compile Include="Interfaces\ISocketable.cs" />
+    <Compile Include="Interfaces\IWeapon.cs" />
+    <Compile Include="Interfaces\IWeaponLevelable.cs" />
+    <Compile Include="Interfaces\IWeaponRepository.cs" />
+    <Compile Include="Interfaces\IWeaponTypeable.cs" />
+    <Compile Include="IO\ConsoleReader.cs" />
+    <Compile Include="IO\ConsoleWriter.cs" />
+    <Compile Include="Models\Gems\Gem.cs" />
+    <Compile Include="Models\Gems\GemLevels\ChippedGemLevel.cs" />
+    <Compile Include="Models\Gems\GemLevels\FlawlessGemLevel.cs" />
+    <Compile Include="Models\Gems\GemLevels\GemLevel.cs" />
+    <Compile Include="Models\Gems\GemLevels\PerfectGemLevel.cs" />
+    <Compile Include="Models\Gems\GemLevels\RegularGemLevel.cs" />
+    <Compile Include="Models\Gems\GemTypes\AmethystGemType.cs" />
+    <Compile Include="Models\Gems\GemTypes\EmeraldGemType.cs" />
+    <Compile Include="Models\Gems\GemTypes\GemType.cs" />
+    <Compile Include="Models\Gems\GemTypes\RubyGemType.cs" />
+    <Compile Include="Models\Weapons\Weapon.cs" />
+    <Compile Include="Models\Weapons\WeaponLevels\CommonWeaponLevel.cs" />
+    <Compile Include="Models\Weapons\WeaponLevels\EpicWeaponLevel.cs" />
+    <Compile Include="Models\Weapons\WeaponLevels\RareWeaponLevel.cs" />
+    <Compile Include="Models\Weapons\WeaponLevels\UncommonWeaponLevel.cs" />
+    <Compile Include="Models\Weapons\WeaponLevels\WeaponLevel.cs" />
+    <Compile Include="Models\Weapons\WeaponTypes\AxeWeaponType.cs" />
+    <Compile Include="Models\Weapons\WeaponTypes\KnifeWeaponType.cs" />
+    <Compile Include="Models\Weapons\WeaponTypes\SwordWeaponType.cs" />
+    <Compile Include="Models\Weapons\WeaponTypes\WeaponType.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
