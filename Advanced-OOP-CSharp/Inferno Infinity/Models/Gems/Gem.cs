@@ -1,6 +1,5 @@
 ﻿namespace P10InfernoInfinity.Models.Gems
 {
-    using Enums;
     using Interfaces;
 
     public class Gem : IGem

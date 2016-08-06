@@ -41,7 +41,7 @@
 
         public void AddGem(IGem gem, int index)
         {
-            if (this.gems[index] == null)
+            if (index < this.gems.Length && this.gems[index] == null)
             {
                 this.gems[index] = gem;
             }
@@ -49,7 +49,7 @@
 
         public void RemoveGem(int index)
         {
-            if (this.gems[index] != null)
+            if (index < this.gems.Length && this.gems[index] != null)
             {
                 this.gems[index] = null;
             }
