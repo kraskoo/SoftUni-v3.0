@@ -30,11 +30,7 @@
                 int targetYaxis = targetArguments[1];
                 int targetZaxis = targetArguments[2];
                 int targetDamage = targetArguments[3];
-                int correspondingAxises = targetXaxis + targetYaxis + targetZaxis;
                 if (canTargetOnCell(cube, targetXaxis, targetYaxis, targetZaxis) &&
-                    validateIndex(targetXaxis, correspondingAxises) &&
-                    validateIndex(targetYaxis, correspondingAxises) &&
-                    validateIndex(targetZaxis, correspondingAxises) &&
                     targetDamage > 0)
                 {
                     cube[targetXaxis, targetYaxis, targetZaxis] = true;
@@ -45,8 +41,8 @@
                 hitOnTarget = Console.ReadLine();
             }
 
-            Console.WriteLine(targetSum);
             int sumOfNonHittingCells = size * size * size - successfulHits;
+            Console.WriteLine(targetSum);
             Console.WriteLine(sumOfNonHittingCells);
         }
     }
