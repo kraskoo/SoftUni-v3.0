@@ -33,6 +33,17 @@
             context.Exercies(new FindLatest10Projects(), "FindLatest10Projects.txt");
         }
 
+        public static void NativeSQLQueryExercisePartTwo(this SoftuniContext context)
+        {
+            context.Exercies(
+                new NativeSQLQueryNativeQueryPart(), "NativeSQLQuery.txt", true);
+        }
+
+        public static void NativeSQLQueryExercisePartOne(this SoftuniContext context)
+        {
+            context.Exercies(new NativeSQLQueryCodeFirstPart(), "NativeSQLQuery.txt");
+        }
+
         public static void DepartmentsWithMoreThan5EmployeesExercise(
                this SoftuniContext context)
         {
@@ -94,10 +105,11 @@
         private static void Exercies<T>(
             this T context,
             IQueryResultable<T> queryResultable,
-            string fileName) where T : DbContext
+            string fileName,
+            bool hasSetToAppend = false) where T : DbContext
         {
             var command = new ExerciseCommand<T>(context);
-            command.Execute(queryResultable, new FileWriter(fileName));
+            command.Execute(queryResultable, new FileWriter(fileName, hasSetToAppend));
         }
     }
 }

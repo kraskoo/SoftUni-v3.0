@@ -71,6 +71,8 @@
     <Compile Include="Models\Queries\FindLatest10Projects.cs" />
     <Compile Include="Models\Queries\FirstLetter.cs" />
     <Compile Include="Models\Queries\IncreaseSalaries.cs" />
+    <Compile Include="Models\Queries\NativeSQLQueryCodeFirstPart.cs" />
+    <Compile Include="Models\Queries\NativeSQLQueryNativeQueryPart.cs" />
     <Compile Include="Models\Queries\Query.cs" />
     <Compile Include="Models\Writers\ConsoleWriter.cs" />
     <Compile Include="Models\Writers\FileWriter.cs" />

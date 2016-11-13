@@ -23,6 +23,8 @@ namespace Exercises
                 // context.FindEmployeesByFirstNameStartingWithSAExercise();
                 // context.IncreaseSalariesExercise();
                 // context.FindLatest10ProjectsExercise();
+                context.NativeSQLQueryExercisePartOne();
+                context.NativeSQLQueryExercisePartTwo();
                 // context.DepartmentsWithMoreThan5EmployeesExercise();
                 // context.EmployeeWithId147SortedByProjectNamesExercise();
                 // context.AddressesByTownNameExercise();

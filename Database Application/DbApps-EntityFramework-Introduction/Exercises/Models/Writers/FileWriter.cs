@@ -11,10 +11,15 @@
         private const string DefaultProgramName = "Notepad.exe";
         private readonly string fileName;
         private string programPath;
+        private bool hasSetToAppend;
 
-        public FileWriter(string fileName, string programPath = DefaultProgramName)
+        public FileWriter(
+            string fileName,
+            bool hasSetToAppend = false,
+            string programPath = DefaultProgramName)
         {
             this.fileName = $"{DefaultResultDirectory}/{fileName}";
+            this.hasSetToAppend = hasSetToAppend;
             this.programPath = programPath;
         }
 
@@ -31,17 +36,20 @@
                 Directory.CreateDirectory(DefaultResultDirectory);
             }
 
-            if (File.Exists(this.fileName))
+            if (!this.hasSetToAppend && File.Exists(this.fileName))
             {
                 File.Delete(this.fileName);
             }
 
-            using (var writer = new StreamWriter(this.fileName))
+            using (var writer = new StreamWriter(this.fileName, this.hasSetToAppend))
             {
                 writer.Write(message);
             }
 
-            Process.Start(new ProcessStartInfo(this.programPath, this.fileName));
+            if (!this.hasSetToAppend)
+            {
+                Process.Start(new ProcessStartInfo(this.programPath, this.fileName));
+            }
         }
     }
 }
