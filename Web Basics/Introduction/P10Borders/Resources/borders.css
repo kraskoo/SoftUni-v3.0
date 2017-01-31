@@ -1,0 +1,33 @@
+p {
+    padding: 5px;
+    background-color: lightgray;
+    width: 350px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 32px;
+    border-radius: 20px;
+}
+
+p:nth-child(1) {
+    border: 5px solid red;
+}
+
+p:nth-child(2) {
+    border: 5px solid green;
+}
+
+p:nth-child(3) {
+    border: 5px solid blue;
+}
+
+p:nth-child(1) > span {
+    color: red;
+}
+
+p:nth-child(2) > span {
+    color: green;
+}
+
+p:nth-child(3) > span {
+    color: blue;
+}

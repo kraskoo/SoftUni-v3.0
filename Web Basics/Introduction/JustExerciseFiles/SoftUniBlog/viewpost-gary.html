@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftUni Blog</title>
+    <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <link type="text/css" rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">SoftUni Blog</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <article>
+                        <header>
+                            <h2>When Did Storage Become So Critical?</h2>
+                        </header>
+                        <p>
+                            By making servers “virtual,” users can move them between hardware swiftly and without downtime, leaving the physical machine to be viewed as little more than a CPU with a bit of memory, and I/O. Conversely, in a VM environment, the storage system grows in importance, as it becomes the underpinning of the entire infrastructure. In a virtualized environment the traditional system disks are provisioned from the central storage, not only adding load but also adding to the randomized data access pattern as many virtual servers concurrently contend for disk resources. Consider this example: Administrator “A” wants to consolidate and virtualize his infrastructure. He has 25 Windows servers, 5 Linux servers, MS Exchange, an ERP system, two small SQL databases and user home directories. The administrator in this scenario will often invest in several new servers with a drastically increased number of CPU cores and provide needed memory but may neglect to size the storage system properly. The problems start here because many factors, including capacity, types of drives, RAID levels, throughput and random I/O performance, need to be considered.
+                        </p>
+                        <small class="author">
+                            Andy Roberts
+                        </small>
+                        <footer>
+                            <div class="pull-right">
+                                <a href="index.html" class="btn btn-default btn-xs">back &raquo;</a>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container modal-footer">
+            <p>&copy; 2016 - Software University Foundation</p>
+        </div>
+    </footer>
+</body>
+</html>
