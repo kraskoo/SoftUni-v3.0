@@ -35,6 +35,7 @@
                         return response;
                     }
                 },
+
                 // Redirect example
                 new Route
                 {

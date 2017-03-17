@@ -1,9 +1,9 @@
 ﻿namespace Data.Repositories
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using Interfaces;
@@ -11,13 +11,13 @@
 
     public class Repository<T> : IRepository<T> where T : class, IModel
     {
-        private readonly DbContext dbContext;
+        private readonly DbContext context;
         private readonly IDbSet<T> entityTable;
 
         public Repository(DbContext context)
         {
-            this.dbContext = context;
-            this.entityTable = this.dbContext.Set<T>();
+            this.context = context;
+            this.entityTable = this.context.Set<T>();
         }
 
         public void InsertOrUpdate(T entity)

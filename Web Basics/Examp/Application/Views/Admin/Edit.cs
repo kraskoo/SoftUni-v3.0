@@ -7,29 +7,29 @@
 
     public class Edit : IRenderable<EditGameViewModel>
     {
-        private readonly string Header = Constants.HeaderHtml.GetContentByName();
-        private readonly string Navbar = Constants.NavHtml;
-        private readonly string Footer = Constants.FooterHtml.GetContentByName();
-        private readonly string MainEdit = Constants.EditGameHtml.GetContentByName();
+        private readonly string header = Constants.HeaderHtml.GetContentByName();
+        private readonly string navbar = Constants.NavHtml;
+        private readonly string footer = Constants.FooterHtml.GetContentByName();
+        private readonly string mainEdit = Constants.EditGameHtml.GetContentByName();
 
         public EditGameViewModel Model { get; set; }
 
         public string Render()
         {
-            return $"{this.Header}{this.Navbar}{this.GetMain()}{this.Footer}";
+            return $"{this.header}{this.navbar}{this.GetMain()}{this.footer}";
         }
 
         private string GetMain()
         {
             return string.Format(
-                this.MainEdit,
-                Model.Id,
-                Model.Title,
-                Model.Description,
-                Model.Thumbnail,
-                Model.Price,
-                Model.Size,
-                Model.Trailer);
+                this.mainEdit,
+                this.Model.Id,
+                this.Model.Title,
+                this.Model.Description,
+                this.Model.Thumbnail,
+                this.Model.Price,
+                this.Model.Size,
+                this.Model.Trailer);
         }
     }
 }

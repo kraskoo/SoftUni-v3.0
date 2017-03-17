@@ -26,7 +26,7 @@
         private string GetHomeGames()
         {
             var homeGamesOutput = new StringBuilder();
-            homeGamesOutput.AppendLine(homeStart);
+            homeGamesOutput.AppendLine(this.homeStart);
             int counter = 0;
             foreach (var homeGame in this.Model)
             {
@@ -44,7 +44,7 @@
                 counter++;
             }
 
-            homeGamesOutput.AppendLine(homeEnd);
+            homeGamesOutput.AppendLine(this.homeEnd);
             return homeGamesOutput.ToString();
         }
 

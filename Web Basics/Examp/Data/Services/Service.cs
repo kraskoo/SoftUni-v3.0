@@ -1,9 +1,9 @@
 ﻿namespace Data.Services
 {
     using System.Linq;
+    using Interfaces;
     using Models;
     using Models.Enums;
-    using Interfaces;
     using SimpleHttpServer.Models;
 
     public abstract class Service

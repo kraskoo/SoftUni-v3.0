@@ -1,12 +1,9 @@
 ﻿namespace SandBoxes.ValidationServiceSandBox
 {
     using System;
-    using System.Linq;
     using Data;
     using Models.BindingModels;
-    using Models.Interfaces;
     using Models.ValidationService;
-    using Models;
 
     public class Startup
     {
@@ -28,24 +25,28 @@
             }
 
             Console.WriteLine();
-            var registration = new RegisterUserValidationService(new RegistrationUserBindingModel
-            {
-                Email = "dfasg34",
-                Password = "dasfkjgh",
-                ConfirmPassword = "tr5yh",
-                FullName = ""
-            }, false);
+            var registration = new RegisterUserValidationService(
+                new RegistrationUserBindingModel
+                {
+                    Email = "dfasg34",
+                    Password = "dasfkjgh",
+                    ConfirmPassword = "tr5yh",
+                    FullName = string.Empty
+                },
+                false);
             foreach (var invalidProperty in registration.InvalidProperties)
             {
                 Console.WriteLine($"{invalidProperty.Key} - {invalidProperty.Value}");
             }
 
             Console.WriteLine();
-            var loginService = new LoginValidationService(new LoginUserBindingModel
-            {
-                Email = "pesho",
-                Password = ""
-            }, data.Users.GetAll());
+            var loginService = new LoginValidationService(
+                new LoginUserBindingModel
+                {
+                    Email = "pesho",
+                    Password = string.Empty
+                },
+                data.Users.GetAll());
             foreach (var invalidProperty in loginService.InvalidProperties)
             {
                 Console.WriteLine($"{invalidProperty.Key} - {invalidProperty.Value}");

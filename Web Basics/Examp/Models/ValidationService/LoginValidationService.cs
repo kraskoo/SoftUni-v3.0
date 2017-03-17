@@ -4,7 +4,7 @@
     using System.Linq;
     using BindingModels;
 
-    public class LoginValidationService :  UserValidationService<LoginUserBindingModel>
+    public class LoginValidationService : UserValidationService<LoginUserBindingModel>
     {
         private readonly IDictionary<string, string> invalidProperties;
         private readonly IEnumerable<User> users;
@@ -22,7 +22,7 @@
 
         protected override void AppendNewInvalidValidation(string reasonField, string invalidMessage)
         {
-            if(!string.IsNullOrEmpty(invalidMessage))
+            if (!string.IsNullOrEmpty(invalidMessage))
             {
                 this.invalidProperties.Add(reasonField, invalidMessage);
             }
@@ -44,7 +44,7 @@
 
         private void ValidateEmailAndPassword()
         {
-            string email = ValidateEmail();
+            string email = this.ValidateEmail();
             Validation validation = new Validation();
             User user =
                 this.users.FirstOrDefault(

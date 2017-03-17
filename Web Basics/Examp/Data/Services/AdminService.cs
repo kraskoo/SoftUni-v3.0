@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Interfaces;
     using Models;
     using Models.BindingModels;
-    using Models.ViewModels;
     using Models.Utilities;
-    using Interfaces;
+    using Models.ViewModels;
 
     public class AdminService : Service
     {

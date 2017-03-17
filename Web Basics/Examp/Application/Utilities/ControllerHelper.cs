@@ -32,10 +32,11 @@
 
         public static void SetupNavbar(this Service service, User user)
         {
-            Constants.NavHtml =
-                string.Format(service.IsUserInAdminRole(user) ?
+            Constants.NavHtml = string.Format(
+                    service.IsUserInAdminRole(user) ?
                     Constants.NavLoggedAdminHtml.GetContentByName() :
-                    Constants.NavLoggedHtml.GetContentByName(), user.FullName);
+                    Constants.NavLoggedHtml.GetContentByName(),
+                    user.FullName);
         }
     }
 }

@@ -20,7 +20,7 @@
         }
 
         public override IDictionary<string, string> InvalidProperties =>
-            new Dictionary<string, string>(validations);
+            new Dictionary<string, string>(this.validations);
 
         protected override void AppendNewInvalidValidation(string reasonField, string invalidMessage)
         {
@@ -41,15 +41,15 @@
         private void ValidateEmail()
         {
             Validation validation = new Validation();
-            validation.CheckUp(isUnique, Constants.TakenEmailMessage);
+            validation.CheckUp(this.isUnique, Constants.TakenEmailMessage);
             string validationResult = validation.ToString();
-            AppendNewInvalidValidation(nameof(this.BindingModel.Password), validationResult);
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Password), validationResult);
             validation = new Validation();
             validation.CheckUp(
                 this.BindingModel.Email.Contains("@") && this.BindingModel.Email.Contains("."),
                 Constants.InvalidEmailMessage);
             validationResult = validation.ToString();
-            AppendNewInvalidValidation(nameof(this.BindingModel.Email), validationResult);
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Email), validationResult);
         }
 
         private void ValidatePassword()
@@ -62,7 +62,7 @@
                 password.Any(char.IsLower) &&
                 password.Any(char.IsDigit),
                 Constants.InvalidPasswordMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Password), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Password), validation.ToString());
         }
 
         private void ValidateConfirmPassword()
@@ -71,7 +71,7 @@
             validation.CheckUp(
                 this.BindingModel.Password == this.BindingModel.ConfirmPassword,
                 Constants.InvalidConfirmMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.ConfirmPassword), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.ConfirmPassword), validation.ToString());
         }
 
         private void ValidateFullName()
@@ -80,7 +80,7 @@
             validation.CheckUp(
                 !string.IsNullOrEmpty(this.BindingModel.FullName.Trim(' ', '\t', '\n')),
                 Constants.InvalidFullnameMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.FullName), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.FullName), validation.ToString());
         }
     }
 }
