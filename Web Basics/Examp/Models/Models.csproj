@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2617D8C6-0449-4F5C-88FA-ABF4F3DA741C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingModels\AddGameBindingModel.cs" />
+    <Compile Include="BindingModels\BuyGameBindingModel.cs" />
+    <Compile Include="BindingModels\DetailGameBindingModel.cs" />
+    <Compile Include="BindingModels\EditGameBindingModel.cs" />
+    <Compile Include="BindingModels\ManageGameBindingModel.cs" />
+    <Compile Include="BindingModels\LoginUserBindingModel.cs" />
+    <Compile Include="BindingModels\RegistrationUserBindingModel.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Enums\UserRole.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Interfaces\ILogin.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="Utilities\TypeExtensions.cs" />
+    <Compile Include="Utilities\Mapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="ValidationService\GameValidationService.cs" />
+    <Compile Include="ValidationService\LoginValidationService.cs" />
+    <Compile Include="ValidationService\RegisterUserValidationService.cs" />
+    <Compile Include="ValidationService\UserValidationService.cs" />
+    <Compile Include="ValidationService\Validation.cs" />
+    <Compile Include="ValidationService\ValidationService.cs" />
+    <Compile Include="ValidationService\ValidationServiceGeneric.cs" />
+    <Compile Include="ViewModels\AddGameViewModel.cs" />
+    <Compile Include="ViewModels\AdminGamesViewModel.cs" />
+    <Compile Include="ViewModels\DeleteGameViewModel.cs" />
+    <Compile Include="ViewModels\DetailsGameViewModel.cs" />
+    <Compile Include="ViewModels\EditGameViewModel.cs" />
+    <Compile Include="ViewModels\HomeGamesViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{8ce335f4-29b1-49c1-963a-8efcc5e6d696}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBoxes.MapperSandbox\SandBoxes.MapperSandbox.csproj">
+      <Project>{D21AC91E-A8FF-4220-B7DF-5AE75E1E5EBC}</Project>
+      <Name>SandBoxes.MapperSandbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleMVC\SimpleMVC.csproj">
+      <Project>{F2EF3059-AA6C-45C8-9DBB-9D36E62AF1B8}</Project>
+      <Name>SimpleMVC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
