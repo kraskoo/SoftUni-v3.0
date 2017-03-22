@@ -1,0 +1,37 @@
+﻿@using CarDealer.Models.ViewModels;
+@model SalesViewModel
+
+@{
+    ViewBag.Title = "Customer Sales";
+}
+
+<h2>Sales By Customer</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>@Model.CustomerId</td>
+        <td>@Model.CustomerName</td>
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <tr>
+        <th>Car</th>
+        <th>Price With Discount</th>
+        <th>Price Without Discount</th>
+        <th>Discount</th>
+    </tr>
+    @foreach (var car in Model.SoldCars)
+    {
+        <tr>
+            <td>@car.MakeAndModel</td>
+            <td>@car.PriceWithDiscount</td>
+            <td>@car.PriceWithoutDiscount</td>
+            <td>@($"{(int)(car.Discount * 100)}%")</td>
+        </tr>
+    }
+</table>
