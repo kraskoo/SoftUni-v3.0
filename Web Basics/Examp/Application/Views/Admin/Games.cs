@@ -2,23 +2,23 @@
 {
     using System.Collections.Generic;
     using System.Text;
-    using Models.ViewModels;
-    using SimpleMVC.Interfaces.Generic;
     using Common;
     using Common.Utilities;
+    using Models.ViewModels;
+    using SimpleMVC.Interfaces.Generic;
 
     public class Games : IRenderable<IEnumerable<AdminGamesViewModel>>
     {
-        private readonly string Header = Constants.HeaderHtml.GetContentByName();
-        private readonly string Navbar = Constants.NavHtml;
-        private readonly string Footer = Constants.FooterHtml.GetContentByName();
-        private readonly string Cell = Constants.AdminGameCellHtml.GetContentByName();
+        private readonly string header = Constants.HeaderHtml.GetContentByName();
+        private readonly string navbar = Constants.NavHtml;
+        private readonly string footer = Constants.FooterHtml.GetContentByName();
+        private readonly string cell = Constants.AdminGameCellHtml.GetContentByName();
 
         public IEnumerable<AdminGamesViewModel> Model { get; set; }
 
         public string Render()
         {
-            return $"{this.Header}{this.Navbar}{this.GetAllGamesInCells()}{this.Footer}";
+            return $"{this.header}{this.navbar}{this.GetAllGamesInCells()}{this.footer}";
         }
 
         private string GetAllGamesInCells()
@@ -27,7 +27,7 @@
             foreach (var gamesViewModel in this.Model)
             {
                 gamesOutput.AppendLine(string.Format(
-                        this.Cell,
+                        this.cell,
                         gamesViewModel.Title,
                         gamesViewModel.Price,
                         gamesViewModel.Size,

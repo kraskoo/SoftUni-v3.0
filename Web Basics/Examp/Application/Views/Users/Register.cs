@@ -14,10 +14,10 @@
         public string Render()
         {
             var outputHtml = new StringBuilder();
-            outputHtml.AppendLine(header)
-                .AppendLine(nav)
+            outputHtml.AppendLine(this.header)
+                .AppendLine(this.nav)
                 .AppendLine(Constants.Register.GetContentByName())
-                .AppendLine(footer);
+                .AppendLine(this.footer);
             return outputHtml.ToString();
         }
     }

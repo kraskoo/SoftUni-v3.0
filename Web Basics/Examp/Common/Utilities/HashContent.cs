@@ -31,7 +31,7 @@
                 { Constants.HomeStartHtml, $"{Constants.SiteContentPath}{Constants.HomeStartHtml}" },
                 { Constants.HomeStartLinksHtml, $"{Constants.SiteContentPath}{Constants.HomeStartLinksHtml}" },
                 { Constants.HomeEndHtml, $"{Constants.SiteContentPath}{Constants.HomeEndHtml}" },
-                { Constants.HomeGameCellHtml, $"{Constants.SiteContentPath}{Constants.HomeGameCellHtml}"},
+                { Constants.HomeGameCellHtml, $"{Constants.SiteContentPath}{Constants.HomeGameCellHtml}" },
                 { Constants.LoginHtml, $"{Constants.SiteContentPath}{Constants.LoginHtml}" },
                 { Constants.NavLoggedHtml, $"{Constants.SiteContentPath}{Constants.NavLoggedHtml}" },
                 { Constants.NavLoggedAdminHtml, $"{Constants.SiteContentPath}{Constants.NavLoggedAdminHtml}" },

@@ -1,8 +1,8 @@
 ﻿namespace Models
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using Interfaces;
 
     public class Game : IModel
@@ -25,7 +25,7 @@
         [Range(typeof(decimal), "0", "79228162514264337593543950335")]
         public decimal Size { get; set; }
 
-        [RegularExpression(@"([\w\d]{11})")]
+        [RegularExpression(@"([\w\W]{11})")]
         public string Trailer { get; set; }
 
         [RegularExpression(@"(https?:\/\/[\w\W]+)")]

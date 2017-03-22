@@ -1,12 +1,12 @@
 ﻿namespace Data.Services
 {
     using System.Linq;
+    using Interfaces;
     using Models;
     using Models.BindingModels;
     using Models.Enums;
-    using Models.ValidationService;
     using Models.Utilities;
-    using Interfaces;
+    using Models.ValidationService;
 
     public class UserService : Service
     {
@@ -29,9 +29,9 @@
 
         public bool IsLoginValid(LoginUserBindingModel lubm, string sessionId)
         {
-            loginValidationService = new LoginValidationService(lubm, this.Data.Users.GetAll());
+            this.loginValidationService = new LoginValidationService(lubm, this.Data.Users.GetAll());
             var user = this.Data.Users.Find(u => u.Email == lubm.Email && u.Password == lubm.Password);
-            if (loginValidationService.InvalidProperties.Count != 0 || user == null)
+            if (this.loginValidationService.InvalidProperties.Count != 0 || user == null)
             {
                 return false;
             }
@@ -56,8 +56,8 @@
         public bool IsRegistrationValid(RegistrationUserBindingModel rubm)
         {
             this.isUnique = this.IsUserUnique(rubm);
-            this.registerUserValidationService = new RegisterUserValidationService(rubm, isUnique);
-            return this.registerUserValidationService.InvalidProperties.Count == 0 && isUnique;
+            this.registerUserValidationService = new RegisterUserValidationService(rubm, this.isUnique);
+            return this.registerUserValidationService.InvalidProperties.Count == 0 && this.isUnique;
         }
 
         private bool GetUsedSessionIfExists(string sessionId, int id)

@@ -39,28 +39,30 @@
             Validation validation = new Validation();
             validation.CheckUp(
                 Regex.IsMatch(this.BindingModel.Title, @"([A-Z][\w\W]){2,99}"), Constants.InvalidGameTitleMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Title), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Title), validation.ToString());
         }
 
         private void ValidatePrice()
         {
             Validation validation = new Validation();
             validation.CheckUp(this.BindingModel.Price >= 1, Constants.InvalidGamePriceMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Price), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Price), validation.ToString());
         }
 
         private void ValidateSize()
         {
             Validation validation = new Validation();
             validation.CheckUp(this.BindingModel.Size >= 1, Constants.InvalidGameSizeMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Size), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Size), validation.ToString());
         }
 
         private void ValidateTrailer()
         {
             Validation validation = new Validation();
-            validation.CheckUp(Regex.IsMatch(this.BindingModel.Trailer, @"([\w\W]){11}"), Constants.InvalidGameYoutubeId);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Trailer), validation.ToString());
+            validation.CheckUp(
+                Regex.IsMatch(this.BindingModel.Trailer, @"([\w\W]){11}"),
+                Constants.InvalidGameYoutubeId);
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Trailer), validation.ToString());
         }
 
         private void ValidateThumbnailUrl()
@@ -68,8 +70,10 @@
             Validation validation = new Validation();
             validation.CheckUp(
                 Regex.IsMatch(
-                    this.BindingModel.ImageThumbnail, @"^(https?:\/\/[\w\W])+"), Constants.InvalidGameImageThumbnailMessage);
-            AppendNewInvalidValidation(nameof(this.BindingModel.ImageThumbnail), validation.ToString());
+                    this.BindingModel.ImageThumbnail,
+                    @"^(https?:\/\/[\w\W])+"),
+                Constants.InvalidGameImageThumbnailMessage);
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.ImageThumbnail), validation.ToString());
         }
 
         private void ValidateDescription()
@@ -77,7 +81,7 @@
             Validation validation = new Validation();
             validation.CheckUp(
                 Regex.IsMatch(this.BindingModel.Description, @"([\w\W]){20,}"), Constants.InvalidGameDescription);
-            AppendNewInvalidValidation(nameof(this.BindingModel.Description), validation.ToString());
+            this.AppendNewInvalidValidation(nameof(this.BindingModel.Description), validation.ToString());
         }
     }
 }

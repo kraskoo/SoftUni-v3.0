@@ -30,7 +30,7 @@
         [HttpGet]
         public IActionResult<AddGameViewModel> Add(HttpSession session, HttpResponse response)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -52,7 +52,7 @@
         [HttpPost]
         public void Add(HttpSession session, HttpResponse response, AddGameBindingModel agbm)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -71,9 +71,10 @@
         }
 
         [HttpGet]
-        public IActionResult<IEnumerable<AdminGamesViewModel>> Games(HttpSession session, HttpResponse response)
+        public IActionResult<IEnumerable<AdminGamesViewModel>> Games(
+            HttpSession session, HttpResponse response)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -95,7 +96,7 @@
         [HttpGet]
         public IActionResult<EditGameViewModel> Edit(HttpSession session, HttpResponse response, int id)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -108,8 +109,7 @@
                 this.Redirect(response, "/");
                 return null;
             }
-
-
+            
             this.SetupNavAndHome(true);
             this.adminService.SetupNavbar(user);
             return this.View(this.adminService.GetEditGame(id));
@@ -118,7 +118,7 @@
         [HttpPost]
         public void Edit(HttpResponse response, HttpSession session, EditGameBindingModel egbm)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -139,7 +139,7 @@
         [HttpGet]
         public IActionResult<DeleteGameViewModel> Delete(HttpSession session, HttpResponse response, int id)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
@@ -161,14 +161,13 @@
         [HttpPost]
         public void Delete(HttpResponse response, HttpSession session, int id)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             var user = this.adminService.FindUserBySession(session);
             bool isUserInAdmin = false;
             if (user != null)
             {
                 isUserInAdmin = this.adminService.IsUserInAdminRole(user);
             }
-
 
             if (!isAuthenticated || !isUserInAdmin)
             {

@@ -2,27 +2,27 @@
 {
     using Common;
     using Common.Utilities;
-    using SimpleMVC.Interfaces.Generic;
     using Models.ViewModels;
+    using SimpleMVC.Interfaces.Generic;
 
     public class Delete : IRenderable<DeleteGameViewModel>
     {
-        private readonly string Header = Constants.HeaderHtml.GetContentByName();
-        private readonly string Navbar = Constants.NavHtml;
-        private readonly string Footer = Constants.FooterHtml.GetContentByName();
-        private readonly string MainDelete = Constants.DeleteGameHtml.GetContentByName();
+        private readonly string header = Constants.HeaderHtml.GetContentByName();
+        private readonly string navbar = Constants.NavHtml;
+        private readonly string footer = Constants.FooterHtml.GetContentByName();
+        private readonly string mainDelete = Constants.DeleteGameHtml.GetContentByName();
 
         public DeleteGameViewModel Model { get; set; }
 
         public string Render()
         {
-            return $"{this.Header}{this.Navbar}{this.GetDelete()}{this.Footer}";
+            return $"{this.header}{this.navbar}{this.GetDelete()}{this.footer}";
         }
 
         private string GetDelete()
         {
             return string.Format(
-                this.MainDelete,
+                this.mainDelete,
                 this.Model.Id,
                 this.Model.Title);
         }

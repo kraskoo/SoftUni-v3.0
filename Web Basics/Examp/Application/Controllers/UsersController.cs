@@ -28,7 +28,7 @@
         [HttpGet]
         public IActionResult Register(HttpSession session, HttpResponse response)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             this.SetupNavAndHome(isAuthenticated);
             if (isAuthenticated)
             {
@@ -42,7 +42,7 @@
         [HttpPost]
         public void Register(HttpSession session, HttpResponse response, RegistrationUserBindingModel rubm)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             this.SetupNavAndHome(isAuthenticated);
             bool isValid = this.userService.IsRegistrationValid(rubm);
             if (isAuthenticated)
@@ -58,7 +58,7 @@
         [HttpGet]
         public IActionResult Login(HttpSession session, HttpResponse response)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             this.SetupNavAndHome(isAuthenticated);
             if (isAuthenticated)
             {
@@ -67,14 +67,13 @@
             }
 
             var user = this.userService.FindUserBySession(session);
-            //this.SetupUserDependant(isAuthenticated, user);
             return this.View();
         }
 
         [HttpPost]
         public void Login(HttpSession session, HttpResponse response, LoginUserBindingModel lubm)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             if (isAuthenticated)
             {
                 this.Redirect(response, "/");
@@ -90,12 +89,12 @@
         [HttpGet]
         public void Logout(HttpSession session, HttpResponse response)
         {
-            if (!session.IsUserAuthenticated(data))
+            if (!session.IsUserAuthenticated(this.data))
             {
                 this.Redirect(response, "/users/login");
             }
 
-            session.Logout(data, response);
+            session.Logout(this.data, response);
             this.Redirect(response, "/users/login");
         }
     }

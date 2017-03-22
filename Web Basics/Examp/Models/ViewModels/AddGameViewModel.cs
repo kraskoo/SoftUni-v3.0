@@ -28,14 +28,14 @@
                 this.formattedHtml = $"{header}{navbar}{main}{footer}";
             }
 
-            return formattedHtml;
+            return this.formattedHtml;
         }
 
-        public string GetFormattedContent(string content)
+        public string GetFormattedContent(string formattedContent)
         {
             if (string.IsNullOrEmpty(this.content))
             {
-                this.content = content;
+                this.content = formattedContent;
             }
 
             return this.content;

@@ -4,9 +4,9 @@
     using System.Linq;
     using Interfaces;
     using Models;
-    using Models.ViewModels;
-    using Models.Utilities;
     using Models.BindingModels;
+    using Models.Utilities;
+    using Models.ViewModels;
 
     public class HomeService : Service
     {

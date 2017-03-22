@@ -6,10 +6,10 @@
     using Data.Services;
     using Models.BindingModels;
     using Models.ViewModels;
+    using SimpleHttpServer.Models;
     using SimpleMVC.Attributes.Methods;
     using SimpleMVC.Controllers;
     using SimpleMVC.Interfaces.Generic;
-    using SimpleHttpServer.Models;
     using Utilities;
 
     public class HomeController : Controller
@@ -31,14 +31,14 @@
         public IActionResult<IEnumerable<HomeGameViewModel>> Index(
             HttpSession session, HttpResponse response, string filter)
         {
-            var isAuthenticated = session.IsUserAuthenticated(data);
+            var isAuthenticated = session.IsUserAuthenticated(this.data);
             this.SetupNavAndHome(isAuthenticated);
             if (!isAuthenticated)
             {
                 return this.View(this.homeService.Games(null, filter));
             }
 
-            var user = homeService.FindUserBySession(session);
+            var user = this.homeService.FindUserBySession(session);
             this.homeService.SetupNavbar(user);
             return this.View(this.homeService.Games(user, filter));
         }
@@ -47,7 +47,7 @@
         public IActionResult<DetailsGameViewModel> Details(
             HttpSession session, HttpResponse response, int id)
         {
-            var user = session.GetAuthenticatedUser(data);
+            var user = session.GetAuthenticatedUser(this.data);
             this.SetupNavAndHome(user != null);
             if (user != null)
             {
