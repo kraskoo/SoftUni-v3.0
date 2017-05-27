@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01ReverseNumbersWithStack", "P01ReverseNumbersWithStack\P01ReverseNumbersWithStack.csproj", "{DB3E5A5B-1A67-4B0B-9810-F15802FCCF07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02CalculateSequenceWithAQueue", "P02CalculateSequenceWithAQueue\P02CalculateSequenceWithAQueue.csproj", "{5471BC1C-BC44-4DC5-A869-EC44FEDFDB15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03ImplementAnArrayBasedStack", "P03ImplementAnArrayBasedStack\P03ImplementAnArrayBasedStack.csproj", "{DBC913A6-C1B5-4042-9A45-BF97C2F096E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04LinkedStack", "P04LinkedStack\P04LinkedStack.csproj", "{2502C380-8C9D-47CB-A7B4-D9A3A8736508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05LinkedQueue", "P05LinkedQueue\P05LinkedQueue.csproj", "{A66B158B-93C8-4B3D-ACAE-121507515FBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB3E5A5B-1A67-4B0B-9810-F15802FCCF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3E5A5B-1A67-4B0B-9810-F15802FCCF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3E5A5B-1A67-4B0B-9810-F15802FCCF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3E5A5B-1A67-4B0B-9810-F15802FCCF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5471BC1C-BC44-4DC5-A869-EC44FEDFDB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5471BC1C-BC44-4DC5-A869-EC44FEDFDB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5471BC1C-BC44-4DC5-A869-EC44FEDFDB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5471BC1C-BC44-4DC5-A869-EC44FEDFDB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC913A6-C1B5-4042-9A45-BF97C2F096E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC913A6-C1B5-4042-9A45-BF97C2F096E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC913A6-C1B5-4042-9A45-BF97C2F096E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC913A6-C1B5-4042-9A45-BF97C2F096E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2502C380-8C9D-47CB-A7B4-D9A3A8736508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2502C380-8C9D-47CB-A7B4-D9A3A8736508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2502C380-8C9D-47CB-A7B4-D9A3A8736508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2502C380-8C9D-47CB-A7B4-D9A3A8736508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66B158B-93C8-4B3D-ACAE-121507515FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66B158B-93C8-4B3D-ACAE-121507515FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66B158B-93C8-4B3D-ACAE-121507515FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66B158B-93C8-4B3D-ACAE-121507515FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
