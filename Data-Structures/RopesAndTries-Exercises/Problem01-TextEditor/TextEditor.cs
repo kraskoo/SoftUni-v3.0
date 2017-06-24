@@ -1,6 +1,5 @@
 ﻿namespace Problem01_TextEditor
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -22,7 +21,7 @@
     /// </summary>
     public class TextEditor : ITextEditor
     {
-        private readonly Dictionary<string, long> users;
+        private readonly Dictionary<string, int> users;
         private readonly Trie<Stack<string>> userStack;
         private Trie<BigList<char>> userString;
 
@@ -30,7 +29,7 @@
         {
             this.userString = new Trie<BigList<char>>();
             this.userStack = new Trie<Stack<string>>();
-            this.users = new Dictionary<string, long>();
+            this.users = new Dictionary<string, int>();
         }
 
         public void Login(string username)
@@ -39,7 +38,7 @@
             this.userStack.Insert(username, new Stack<string>());
             if (!this.users.ContainsKey(username))
             {
-                this.users.Add(username, DateTime.Now.Ticks);
+                this.users.Add(username, this.users.Count + 1);
             }
         }
 
