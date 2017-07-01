@@ -72,9 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hierarchy.Recreate\Hierarchy.Recreate.csproj">
-      <Project>{47bc5b3f-a2c9-4e35-8c89-f72772973fe8}</Project>
-      <Name>Hierarchy.Recreate</Name>
+    <ProjectReference Include="..\Hierarchy.Core\Hierarchy.Core.csproj">
+      <Project>{5bd3c008-9f76-4a6b-8908-ca06aec8607e}</Project>
+      <Name>Hierarchy.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

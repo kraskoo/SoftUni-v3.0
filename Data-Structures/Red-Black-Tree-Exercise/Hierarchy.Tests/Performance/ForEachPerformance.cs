@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Recreate;
+    using Core;
 
     [TestClass]
     public class ForEachPerformance

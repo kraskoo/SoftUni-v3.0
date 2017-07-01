@@ -1,6 +1,6 @@
 ﻿namespace Hierarchy.Tests.Correctness
 {
-    using Recreate;
+    using Core;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

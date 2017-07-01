@@ -8,7 +8,7 @@
     public class Hierarchy<T> : IHierarchy<T>
     {
         private readonly Node root;
-        private readonly SortedDictionary<T, Node> children;
+        private readonly Dictionary<T, Node> children;
 
         private class Node
         {
@@ -29,7 +29,7 @@
         public Hierarchy(T root)
         {
             this.root = new Node(root);
-            this.children = new SortedDictionary<T, Node> { { root, this.root } };
+            this.children = new Dictionary<T, Node> { { root, this.root } };
         }
 
         public int Count => this.children.Count;

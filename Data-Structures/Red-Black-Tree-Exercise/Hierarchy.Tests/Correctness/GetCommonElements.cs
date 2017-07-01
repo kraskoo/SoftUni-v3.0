@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Recreate;
+    using Core;
 
     [TestClass]
     public class GetCommonElements : BaseTest
