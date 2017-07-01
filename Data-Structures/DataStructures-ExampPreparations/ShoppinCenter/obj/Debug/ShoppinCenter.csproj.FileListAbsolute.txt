@@ -1,8 +1,0 @@
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\bin\Debug\ShoppinCenter.exe.config
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\bin\Debug\ShoppinCenter.exe
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\bin\Debug\ShoppinCenter.pdb
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\bin\Debug\PowerCollections.dll
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\bin\Debug\PowerCollections.xml
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\obj\Debug\ShoppinCenter.csprojResolveAssemblyReference.cache
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\obj\Debug\ShoppinCenter.exe
-D:\User\Desktop\DataStructures-ExampPreparations\ShoppinCenter\obj\Debug\ShoppinCenter.pdb
