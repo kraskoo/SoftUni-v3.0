@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hierarchy.Tests", "Hierarch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hierarchy.Core", "Hierarchy.Core\Hierarchy.Core.csproj", "{5BD3C008-9F76-4A6B-8908-CA06AEC8607E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hierarchy.Recreate", "Hierarchy.Recreate\Hierarchy.Recreate.csproj", "{47BC5B3F-A2C9-4E35-8C89-F72772973FE8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{5BD3C008-9F76-4A6B-8908-CA06AEC8607E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BD3C008-9F76-4A6B-8908-CA06AEC8607E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BD3C008-9F76-4A6B-8908-CA06AEC8607E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47BC5B3F-A2C9-4E35-8C89-F72772973FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47BC5B3F-A2C9-4E35-8C89-F72772973FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47BC5B3F-A2C9-4E35-8C89-F72772973FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47BC5B3F-A2C9-4E35-8C89-F72772973FE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
