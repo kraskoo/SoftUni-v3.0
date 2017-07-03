@@ -27,7 +27,7 @@ public class PerformanceTests
         int count = enterprise.Count;
         Assert.AreEqual(100000, count);
 
-        Assert.IsTrue(l1 < 350);
+        Assert.IsTrue(l1 < 500);
     }
 
     [Test]
@@ -58,7 +58,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 300);
+        Assert.IsTrue(l1 < 500);
     }
 
     [Test]
@@ -89,7 +89,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 300);
+        Assert.IsTrue(l1 < 500);
     }
 
     [Test]
@@ -122,7 +122,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 350);
+        Assert.IsTrue(l1 < 600);
     }
 
     [Test]
@@ -152,7 +152,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
         Console.WriteLine(l1);
-        Assert.IsTrue(l1 < 150);
+        Assert.IsTrue(l1 < 200);
     }
 
     [Test]
@@ -208,7 +208,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 150);
+        Assert.IsTrue(l1 < 210);
     }
 
     [Test]
@@ -237,7 +237,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 150);
+        Assert.IsTrue(l1 < 200);
     }
 
     [Test]
@@ -429,7 +429,7 @@ public class PerformanceTests
         watch.Stop();
         long l1 = watch.ElapsedMilliseconds;
 
-        Assert.IsTrue(l1 < 150);
+        Assert.IsTrue(l1 < 300);
         Assert.AreEqual(99951, count);
     }
 

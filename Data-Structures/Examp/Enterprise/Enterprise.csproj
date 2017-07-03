@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeePositionEqualityComparer.cs" />
+    <Compile Include="EmployeeSalaryEqualityComparer.cs" />
+    <Compile Include="EmplyeePositionAndSalaryEqualityComparer.cs" />
     <Compile Include="Enterprise.cs" />
     <Compile Include="IEnterprise.cs" />
     <Compile Include="Launcher.cs" />
