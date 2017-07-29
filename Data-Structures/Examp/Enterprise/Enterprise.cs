@@ -6,13 +6,13 @@ using Wintellect.PowerCollections;
 
 public class Enterprise : IEnterprise
 {
-    private readonly Dictionary<Guid, Employee> employeeById;
+    private readonly Dictionary<string, Employee> employeeById;
     private readonly Dictionary<Position, HashSet<Employee>> employeeByPosition;
     private readonly OrderedDictionary<double, HashSet<Employee>> employeeBySalary;
 
     public Enterprise()
     {
-        this.employeeById = new Dictionary<Guid, Employee>();
+        this.employeeById = new Dictionary<string, Employee>();
         this.employeeByPosition = new Dictionary<Position, HashSet<Employee>>();
         this.employeeBySalary = new OrderedDictionary<double, HashSet<Employee>>();
     }
@@ -21,7 +21,7 @@ public class Enterprise : IEnterprise
 
     public void Add(Employee employee)
     {
-        this.employeeById.Add(employee.Id, employee);
+        this.employeeById.Add(employee.Id.ToString(), employee);
         this.AddEmployeeByPosition(employee);
         this.AddEmployeeBySalary(employee);
     }
@@ -33,62 +33,64 @@ public class Enterprise : IEnterprise
             return Enumerable.Empty<Employee>();
         }
 
-        var minSalaryEmployees = this.employeeBySalary[minSalary];
-        return minSalaryEmployees.Intersect(this.employeeByPosition[position]);
+        return this.GetByPosition(position).Intersect(this.GetBySalary(minSalary), new EmplyeePositionAndSalaryEqualityComparer());
     }
 
     public bool Change(Guid guid, Employee employee)
     {
-        if (!this.employeeById.ContainsKey(guid))
+        var strGuid = guid.ToString();
+        if (!this.employeeById.ContainsKey(strGuid))
         {
             return false;
         }
 
-        var currentEmployee = this.employeeById[guid];
+        var currentEmployee = this.employeeById[strGuid];
         this.employeeByPosition[currentEmployee.Position].Remove(currentEmployee);
         this.employeeBySalary[currentEmployee.Salary].Remove(currentEmployee);
-        this.employeeById[guid].FirstName = employee.FirstName;
-        this.employeeById[guid].LastName = employee.LastName;
-        this.employeeById[guid].Position = employee.Position;
-        this.employeeById[guid].HireDate = employee.HireDate;
-        this.employeeById[guid].Salary = employee.Salary;
-        this.AddEmployeeByPosition(this.employeeById[guid]);
-        this.AddEmployeeBySalary(this.employeeById[guid]);
+        this.employeeById[strGuid].FirstName = employee.FirstName;
+        this.employeeById[strGuid].LastName = employee.LastName;
+        this.employeeById[strGuid].Position = employee.Position;
+        this.employeeById[strGuid].HireDate = employee.HireDate;
+        this.employeeById[strGuid].Salary = employee.Salary;
+        this.AddEmployeeByPosition(this.employeeById[strGuid]);
+        this.AddEmployeeBySalary(this.employeeById[strGuid]);
         return true;
     }
 
     public bool Contains(Guid guid)
     {
-        return this.employeeById.ContainsKey(guid);
+        return this.employeeById.ContainsKey(guid.ToString());
     }
 
     public bool Contains(Employee employee)
     {
-        return this.employeeById.ContainsKey(employee.Id);
+        return this.employeeById.ContainsKey(employee.Id.ToString());
     }
 
     public bool Fire(Guid guid)
     {
-        if (!this.employeeById.ContainsKey(guid))
+        var strGuid = guid.ToString();
+        if (!this.employeeById.ContainsKey(strGuid))
         {
             return false;
         }
 
-        var employeeToFire = this.employeeById[guid];
+        var employeeToFire = this.employeeById[strGuid];
         this.employeeByPosition[employeeToFire.Position].Remove(employeeToFire);
         this.employeeBySalary[employeeToFire.Salary].Remove(employeeToFire);
-        this.employeeById.Remove(guid);
+        this.employeeById.Remove(strGuid);
         return true;
     }
 
     public Employee GetByGuid(Guid guid)
     {
-        if (!this.employeeById.ContainsKey(guid))
+        var strGuid = guid.ToString();
+        if (!this.employeeById.ContainsKey(strGuid))
         {
             throw new ArgumentException();
         }
 
-        return this.employeeById[guid];
+        return this.employeeById[strGuid];
     }
 
     public IEnumerable<Employee> GetByPosition(Position position)
@@ -120,7 +122,7 @@ public class Enterprise : IEnterprise
             throw new InvalidOperationException();
         }
 
-        return this.GetBySalary(salary).Intersect(this.employeeByPosition[position]);
+        return this.employeeByPosition[position].Intersect(this.employeeBySalary[salary]);
     }
 
     public IEnumerator<Employee> GetEnumerator()
@@ -133,12 +135,13 @@ public class Enterprise : IEnterprise
 
     public Position PositionByGuid(Guid guid)
     {
-        if (!this.employeeById.ContainsKey(guid))
+        var strGuid = guid.ToString();
+        if (!this.employeeById.ContainsKey(strGuid))
         {
             throw new InvalidOperationException();
         }
 
-        return this.employeeById[guid].Position;
+        return this.employeeById[strGuid].Position;
     }
 
     public bool RaiseSalary(int months, int percent)
@@ -155,15 +158,14 @@ public class Enterprise : IEnterprise
 
         foreach (var employee in matchEmployees)
         {
-            this.employeeById.Remove(employee.Id);
+            var strGuid = employee.Id.ToString();
+            this.employeeById.Remove(strGuid);
             this.employeeByPosition[employee.Position].Remove(employee);
             this.employeeBySalary[employee.Salary].Remove(employee);
-            var percentageUp = $".{percent}";
-            percentageUp = percent <= 100 ? $"1{percentageUp}" : $"{percent / 100}{percentageUp}";
-            var percentageMultiplier = double.Parse(percentageUp);
+            var percentageMultiplier = double.Parse($"{percent / 100}");
             var risedSalary = employee.Salary * percentageMultiplier;
             employee.Salary = risedSalary;
-            this.employeeById.Add(employee.Id, employee);
+            this.employeeById.Add(strGuid, employee);
             this.AddEmployeeByPosition(employee);
             this.AddEmployeeBySalary(employee);
         }
@@ -181,7 +183,7 @@ public class Enterprise : IEnterprise
     public IEnumerable<Employee> SearchByNameAndPosition(string firstName, string lastName, Position position)
     {
         return this.employeeById
-                .Where(empl => empl.Value.LastName.Equals(lastName) &&
+                .Where(empl => empl.Value.FirstName.Equals(firstName) &&
                                empl.Value.LastName.Equals(lastName) &&
                                empl.Value.Position.Equals(position))
                 .Select(empl => empl.Value);
@@ -216,7 +218,10 @@ public class Enterprise : IEnterprise
     {
         if (!this.employeeBySalary.ContainsKey(employee.Salary))
         {
-            this.employeeBySalary.Add(employee.Salary, new HashSet<Employee>());
+            this.employeeBySalary.Add(
+                employee.Salary,
+                new HashSet<Employee>(
+                    new EmployeeSalaryEqualityComparer()));
         }
 
         this.employeeBySalary[employee.Salary].Add(employee);
@@ -226,7 +231,10 @@ public class Enterprise : IEnterprise
     {
         if (!this.employeeByPosition.ContainsKey(employee.Position))
         {
-            this.employeeByPosition.Add(employee.Position, new HashSet<Employee>());
+            this.employeeByPosition.Add(
+                employee.Position,
+                new HashSet<Employee>(
+                    new EmployeePositionEqualityComparer()));
         }
 
         this.employeeByPosition[employee.Position].Add(employee);
