@@ -24,6 +24,7 @@
                 .SelectMany(v => v)
                 .Where(v => !this.graph.ContainsKey(v))
                 .Distinct()
+                .Apply()
                 .ForEachTerminal(str => this.graph.Add(str, new List<string>()));
             foreach (var vertex in this.graph.Keys)
             {
