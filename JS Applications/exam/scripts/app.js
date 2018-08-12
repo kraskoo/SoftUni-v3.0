@@ -78,12 +78,6 @@ $(() => {
 			}
 		});
 		this.get('#/logout', (ctx) => {
-			ctx.isAuth = auth.isAuth();
-			if (ctx.isAuth) {
-				ctx.redirect('#/catalog');
-				return;
-			}
-			
 			auth.logout().then(() => {
 				sessionStorage.clear();
 				notify.showInfo('Logout successful.');
