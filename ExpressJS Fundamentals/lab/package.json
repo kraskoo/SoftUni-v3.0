@@ -1,0 +1,33 @@
+{
+  "name": "expressJs-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engine": ">=7.6",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "KS",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "cookie-parser": "1.4.3",
+    "express": "4.16.4",
+    "express-handlebars": "3.0.0",
+    "express-session": "1.15.6",
+    "formidable": "^1.2.1",
+    "gulp": "4.0.0",
+    "gulp-clean-css": "4.0.0",
+    "gulp-rename": "1.4.0",
+    "mongoose": "5.4.1",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "uidk": "0.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-google": "^0.11.0"
+  }
+}

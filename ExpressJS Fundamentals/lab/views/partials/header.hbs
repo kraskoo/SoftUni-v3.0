@@ -1,0 +1,17 @@
+<nav class="nav">
+  <ul>
+    {{#if user}}
+    <li><a href="/">Home Page</a></li>
+    <li><a href="/product/add">Add Product</a></li>
+    <li><a href="/category/add">Add Category</a></li>
+    <li class="align-right">Welcome {{user.username}}!</li>
+    <li class="align-right">
+      <form id="logout-form" action="/user/logout" method="post"></form>
+      <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+    </li>
+    {{else}}
+    <li class="align-right"><a href="/user/login">Login</a></li>
+    <li class="align-right"><a href="/user/register">Register</a></li>
+    {{/if}}
+  </ul>
+</nav>

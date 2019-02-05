@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> metaTags}}
+  <title>ShopStop</title>
+  {{> headLinks}}
+</head>
+<body>
+  <header>
+    {{> header}}
+  </header>
+  <main>
+    {{#if error}}
+    <h2 class="error-msg">{{error}}</h2>
+    {{else if success}}
+    <h2 class="success-msg">{{success}}</h2>
+    {{/if}}
+    {{{body}}}
+  </main>
+  <footer>
+    {{> footer}}
+  </footer>
+</body>
+</html>
