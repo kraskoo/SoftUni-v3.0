@@ -1,4 +1,5 @@
 const Product = require('../models/Product');
+const Category = require('../models/Category');
 
 function getData(req, products) {
   let data = { products };
@@ -20,24 +21,31 @@ module.exports = {
       return;
     }
 
-    Product.find()
-      .populate('category')
-      .where('buyer')
-      .equals(undefined)
-      .then(products => {
+    Category.find()
+      .populate('products')
+      .then(categories => {
+        let products = [];
+        for (let category of categories) {
+          let categoryProducts = category.products.filter(x => x.buyer === undefined);
+          for (let product of categoryProducts) {
+            product.category = category;
+            products.push(product);
+          }
+        }
+
         products.map(x => {
           x.splittedDescription = x.description.split(/\r?\n/g);
           x.isCreator = req.user._id.toHexString() === x.creator._id.toHexString();
           return x;
         });
-
         let data = getData(req, products);
         res.render('home/index', {
           products: data.products,
           error: data.error,
           success: data.success
         });
-      }).catch(err => {
+      })
+      .catch(err => {
         res.redirect(`/?error=${encodeURIComponent(err.message)}`);
       });
   },
