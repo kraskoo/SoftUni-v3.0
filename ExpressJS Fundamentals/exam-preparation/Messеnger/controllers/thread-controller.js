@@ -13,7 +13,7 @@ module.exports = {
           return;
         }
 
-        Thread.findOne({ users: req.user._id, users: user._id })
+        Thread.findOne({ users: { $all: [ req.user._id, user._id ] } })
           .then(thread => {
             if (thread === null) {
               let newThread = new Thread({ users: [ req.user._id, user._id ] });
@@ -44,7 +44,7 @@ module.exports = {
 
     User.findOne({ username: otherUser })
       .then(user => {
-        Thread.findOne({ users: req.user._id, users: user._id })
+        Thread.findOne({ users: { $all: [ req.user._id, user._id ] } })
           .then(thread => {
             Message.find({ thread: thread._id })
               .populate('user')
