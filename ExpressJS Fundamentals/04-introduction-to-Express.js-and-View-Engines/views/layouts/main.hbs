@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head}}
+</head>
+<body>
+  <div class="container">
+    {{> header}}
+    <main>
+      {{#if globalErrors}}
+      <span class="error">
+      {{#each globalErrors}}
+        <p>{{this}}</p>
+      {{/each}}
+      </span>
+      {{/if}}
+      {{{body}}}
+    </main>
+  </div>
+  {{> footer}}
+</body>
+</html>

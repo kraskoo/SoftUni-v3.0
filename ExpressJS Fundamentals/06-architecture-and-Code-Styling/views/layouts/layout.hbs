@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SoftUni blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/28822290?s=400&v=4" type="image/png" />
+  <script type="application/javascript" src="/javascripts/jquery-1.10.2.js"></script>
+  <script type="application/javascript" src="/javascripts/bootstrap.js"></script>
+</head>
+<body>
+  <header>{{> header}}</header>
+  {{#if error}}
+  <h2>{{error}}</h2>
+  {{/if}}
+  {{{body}}}
+</body>
+<footer>{{> footer}}</footer>
+</html>

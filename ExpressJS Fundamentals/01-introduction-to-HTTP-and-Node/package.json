@@ -1,0 +1,12 @@
+{
+  "name": "01-introduction",
+  "version": "1.0.0",
+  "description": "Introduction-to-Node-JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "KS",
+  "license": "MIT"
+}
