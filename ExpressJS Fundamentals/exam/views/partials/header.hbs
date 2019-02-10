@@ -1,0 +1,27 @@
+{{#if user}}
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/project/all">Projects</a></li>
+  <li><a href="/team/all">Teams</a></li>
+  {{#if isAdmin}}
+  <li><a href="/team/create">Create Team</a></li>
+  <li><a href="/project/create">Create Project</a></li>
+  {{/if}}
+  <div class="right">
+    <li>Welcome, {{user.username}}!</li>
+    <li><a href="/user/profile">Profile</a></li>
+    <li>
+      <form id="logout-form" action="/user/logout" method="POST"></form>
+      <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+    </li>
+  </div>
+</ul>
+{{else}}
+<ul>
+  <li><a href="/">Home</a></li>
+  <div class="right">
+    <li><a href="/user/login">Login</a></li>
+    <li><a href="/user/register">Register</a></li>
+  </div>
+</ul>
+{{/if}}

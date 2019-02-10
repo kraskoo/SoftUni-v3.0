@@ -1,0 +1,55 @@
+{{#if isAdmin}}
+<h1>Teams</h1>
+<h3>Manage Users</h3>
+<div class="form">
+  <form action="/team/distribute" method="POST">
+    <label for="user">User</label>
+    <select id="user" name="user">
+      {{#each users}}
+      <option value="{{this._id}}">{{this.username}}</option>
+      {{/each}}
+    </select>
+    <label for="team">Team</label>
+    <select id="team" name="team">
+      {{#each teams}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <input type="submit" value="Distribute">
+  </form>
+</div>
+{{else}}
+<h1>Teams</h1>
+<form class="search" action="/team/search" method="POST">
+  <label for="search">Seach: </label>
+  <input type="text" id="search" name="search">
+  <input type="submit" value="Search">
+</form>
+<div class="teams">
+  {{#each teams}}
+  <div class="team">
+    <h2>{{this.name}}</h2>
+    <div class="team-info">
+      <h3>Members</h3>
+      {{#unless this.hasMembers}}
+      <p>Team has no members</p>
+      {{else}}
+      {{#each this.members}}
+      <p>{{this.firstName}} {{this.lastName}}</p>
+      {{/each}}
+      {{/unless}}
+    </div>
+    <div class="team-info">
+      <h3>Projects</h3>
+      {{#unless this.hasProjects}}
+      <p>Team has no projects</p>
+      {{else}}
+      {{#each projects}}
+      <p>{{this.name}}</p>
+      {{/each}}
+      {{/unless}}
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
