@@ -1,0 +1,14 @@
+.streets p {
+  font-size: 22px;
+  border: 2px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.streets p:hover {
+  border: 2px solid transparent;
+  background: rgb(64, 139, 224);
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.HouseDetails {
+ width: 350px;
+  box-sizing:border-box;
+
+}
+
+.HouseDetails p {
+  font-size: 22px;
+}

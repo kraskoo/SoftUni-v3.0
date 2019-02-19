@@ -1,0 +1,3 @@
+[{"_id":{"$oid":"5c5d3852d4511b33e09d7bb0"},"homes":[{"$oid":"5c5d3a79686a00389075ade1"},{"$oid":"5c5d3ad0686a00389075ade2"},{"$oid":"5c5d3aef686a00389075ade3"}],"location":"8314 Glenwood Drive Herndon, VA 20170","__v":3},
+{"_id":{"$oid":"5c5d3863d4511b33e09d7bb1"},"homes":[{"$oid":"5c5d3b31686a00389075ade4"},{"$oid":"5c5d3b5b686a00389075ade5"},{"$oid":"5c5d3b87686a00389075ade6"}],"location":"18 Railroad St. Delray Beach, FL 33445","__v":3},
+{"_id":{"$oid":"5c5d386bd4511b33e09d7bb2"},"homes":[{"$oid":"5c5d3c01686a00389075ade7"},{"$oid":"5c5d3c5a686a00389075ade8"},{"$oid":"5c5d3c9e686a00389075ade9"}],"location":"43 Wagon Court Elkton, MD 21921","__v":3}]

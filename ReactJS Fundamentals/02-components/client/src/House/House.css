@@ -1,0 +1,10 @@
+.House {
+  width: 350px;
+  height: 220;
+  overflow: hidden;
+}
+
+.House img:hover {
+  background: rgb(64, 139, 224);
+  cursor: pointer;
+}

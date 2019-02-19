@@ -1,0 +1,2 @@
+"C:\Program Files\MongoDB\Server\4.0\bin\mongoimport.exe" --db home-agent --collection streets --file streets.json --jsonArray
+"C:\Program Files\MongoDB\Server\4.0\bin\mongoimport.exe" --db home-agent --collection houses --file houses.json --jsonArray

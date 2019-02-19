@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+  background-color: rgb(174, 210, 250);
+  font-family: 'Ubuntu',
+  serif;
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.streets,
+.houses {
+  width: 350px;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.image {
+  width: 320px;
+  height: 250px;
+  overflow: hidden;
+
+}
+
+img {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border: 2px solid black;
+  background: white;
+  padding: 10px;
+}
