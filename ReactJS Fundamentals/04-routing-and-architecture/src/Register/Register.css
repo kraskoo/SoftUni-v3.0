@@ -1,0 +1,32 @@
+.Register{
+  padding-top: 2em;
+}
+
+.Register form {
+  display: grid;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.Register input {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.Register input[type="submit"]{  
+  width: 25%;
+  margin:0 auto;
+  border: 2px solid dodgerblue;
+  text-align: center;  
+  font-size: 14px;
+  background: dodgerblue;
+  color: white;
+  border-radius: 7px;
+  margin-top: 20px; 
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.5); 
+}
+
+.Register input[type="submit"]:hover{
+  color: dodgerblue;
+  background: transparent;
+}

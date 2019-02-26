@@ -1,0 +1,40 @@
+.Register {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.Register form {
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.Register form input[type="text"],
+.Register form input[type="password"] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid wheat;
+}
+
+.Register form input[type="submit"] {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #455859;
+    color: white;
+    font-size:18px;
+}
+
+.Register form input[type="submit"]:hover {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #455859;
+    background:white;
+    color: #455859;
+}
