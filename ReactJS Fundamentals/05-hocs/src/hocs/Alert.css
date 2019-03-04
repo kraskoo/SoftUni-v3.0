@@ -1,0 +1,40 @@
+.alert {
+  border: 0;
+  padding: 0px;
+}
+
+.alert > * {
+  border-color: red;
+  border-width: 2px;
+  margin: 0px;
+}
+
+.alert > * > header {
+  border-color: red;
+  background-color: rgb(104, 61, 61);
+}
+
+.alert-symbol {
+  display: block;
+  width: 40px;
+  text-align: center;
+  background-color: red;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.alert:hover > * {
+  border-color: rgb(255, 94, 94);
+  border-width: 2px;
+  margin: 0px;
+}
+
+.alert:hover > * > header {
+  border-color: rgb(255, 94, 94);
+  background-color: rgb(104, 79, 79);
+}
+
+.alert:hover .alert-symbol {
+  background-color: rgb(255, 94, 94);
+}
