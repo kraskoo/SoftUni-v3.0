@@ -1,0 +1,1 @@
+{"version":3,"file":"Request.js","sourceRoot":"","sources":["../../01-data-class/Request.ts"],"names":[],"mappings":";;AAAA,MAAqB,OAAO;IAI1B,YACS,MAAc,EACd,GAAW,EACX,OAAe,EACf,OAAe;QAHf,WAAM,GAAN,MAAM,CAAQ;QACd,QAAG,GAAH,GAAG,CAAQ;QACX,YAAO,GAAP,OAAO,CAAQ;QACf,YAAO,GAAP,OAAO,CAAQ;QAPjB,aAAQ,GAAuB,SAAS,CAAC;QACzC,cAAS,GAAY,KAAK,CAAC;IAO/B,CAAC;CACL;AAVD,0BAUC"}

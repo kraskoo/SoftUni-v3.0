@@ -1,0 +1,35 @@
+//import Melon from "./Melon";
+import Firemelon from "./Firemelon";
+import Melolemonmelon from './Melolemonmelon';
+
+//let test: Melon = new Melon(100, "Test");
+
+let firemelon: Firemelon = new Firemelon(12.5, "Kingsize");
+console.log(firemelon.toString());
+console.log('------------');
+let melolemonmelon: Melolemonmelon = new Melolemonmelon(16, 'Peshosize');
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());
+console.log('------------');
+melolemonmelon.morph();
+console.log(melolemonmelon.toString());

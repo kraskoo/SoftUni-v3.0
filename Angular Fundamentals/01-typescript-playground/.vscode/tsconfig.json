@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "rootDir": "../",
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "classic",
+    "target": "es6",
+    "outDir": "../dist",
+    "sourceMap": true
+  },
+  "include": [ "../" ]
+}
